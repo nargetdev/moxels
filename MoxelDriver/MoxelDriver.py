@@ -38,11 +38,11 @@ class MoxelDriver:
     def drive_servos(self, q, ql):
         while True:
             try:
-                print("moxels - try lock")
+                # print("moxels - try lock")
                 self.queueLock.acquire()
-                print("moxels - got lock")
+                # print("moxels - got lock")
                 if not self.workQueue.empty():
-                    print("moxels - GET ITEM")
+                    # print("moxels - GET ITEM")
 
                     artnet_item = self.workQueue.get()
 
@@ -58,7 +58,7 @@ class MoxelDriver:
                         self.servos[i].move_prepare((moxel_cmd[i] * 4) % 1000)
                         self.controller.move_start()
                 else:
-                    print("moxels - NO ITEM")
+                    # print("moxels - NO ITEM")
 
                     self.queueLock.release()
 

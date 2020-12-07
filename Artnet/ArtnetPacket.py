@@ -70,9 +70,9 @@ def listen_and_redirect_artnet_packets(workQueue, queueLock):
             print(packet)
 
             # Fill the queue
-            print("artnet - try lock")
+            # print("artnet - try lock")
             queueLock.acquire()
-            print("artnet - GOT lock")
+            # print("artnet - GOT lock")
 
             if (workQueue.full()):
                 workQueue.get()
