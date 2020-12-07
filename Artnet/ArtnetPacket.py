@@ -67,7 +67,7 @@ def listen_and_redirect_artnet_packets(workQueue, queueLock):
             packet = ArtnetPacket.unpack_raw_artnet_packet(data)
             # sock_broadcast.sendto(
             #     packet.data, ('255.255.255.255', BROADCAST_PORT))
-            print(packet)
+            # print(packet)
 
             # Fill the queue
             # print("artnet - try lock")

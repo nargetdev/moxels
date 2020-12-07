@@ -55,7 +55,7 @@ class MoxelDriver:
                     print("processed artnet packet created cmd: ", moxel_cmd)
 
                     for i in range(self.num_servos):
-                        self.servos[i].move_prepare((moxel_cmd[i] * 4) % 1000)
+                        self.servos[i].move_prepare((moxel_cmd[i] * 4) % 1024)
                         self.controller.move_start()
                 else:
                     # print("moxels - NO ITEM")
